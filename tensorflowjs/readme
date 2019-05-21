@@ -1,0 +1,3 @@
+yarn ts-node tools/pb2json_converter.ts \
+/home/joyice/ai/tensorflow_js/sleep/tensorflowjs/web_model \
+/home/joyice/ai/tensorflow_js/sleep/tensorflowjs/json_model

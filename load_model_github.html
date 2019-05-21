@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>load model failed</title>
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0-alpha2/dist/tf.min.js"></script>
+<script type="module">
+
+    async function load_model(){
+
+        const WEIGTHTS_URL = './tensorflowjs/web_model/weights_manifest.json';
+        const MODEL_URL='./tensorflowjs/web_model/tensorflowjs_model.pb';
+
+        const model = await tf.loadFrozenModel(MODEL_URL,WEIGTHTS_URL);
+
+        console.log(model);
+
+        var xs = tf.randomUniform([60, 3000, 1, 1]);
+
+        xs.print()
+
+        model.execute(xs).print();
+
+    }
+    load_model()
+
+</script>
+</body>
+</html>
